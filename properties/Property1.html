@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Property</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="jQueryAprop.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="propertyDetails.js"></script>
+
+<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+ <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+ <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+
+<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+<link href="jquery-ui.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/allPrps.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/propertyDecs.css" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../javascript/propertDesc.js"></script>
+
+
+   
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="../MainPages/home.html" class="navbar-brand"><img id="Logo" src="../images/PropIcon.png"></a>
+        <ul>
+          <li><a href="../MainPages/viewPoperties.html">View Properties</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+        <button class="navbar-toggler">
+          <span></span>
+        </button>
+      </nav>
+<br><br>
+
+<div class="parentContainer">
+
+    <div class="sideDesc"><!--Div class of right side container-->
+        <h3>Attractive three bedroom semi-detached family home for sale</h3><br><br>
+        <h2>£650000</h2>
+        <br><hr><br>
+        <h2>Contact a Agent</h2>
+        <br>
+        <button id="contactbttn">Contact Now</button>
+        <br><br>
+        <div class="favButtons">
+            <p id="prop1">
+              <button class="addFavourites">Add To Favourites</button><!--add to favourite button-->
+              <button class="removeFavourites">Remove from Favourites</button><!--remove from favourite button-->
+              </p>
+            </div>
+      </div>
+
+
+  <!-- Container for the image gallery -->
+<div class="container">
+
+    <!-- full size images of properties -->
+    <div class="mySlides">
+        <img src="../images/prop1picbig.jpg" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+        <img src="../images/prop1pic2.jpg" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+        <img src="../images/prop1pic3.jpg" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+        <img src="../images/prop1pic4.jpg" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+        <img src="../images/prop1pic5.jpg" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+        <img src="../images/prop1pic6.jpg" style="width:100%">
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+    
+    <!-- small size images -->
+    <div class="row">
+      <div class="column">
+        <img class="demo cursor" src="../images/prop1picsmall.jpg" style="width:100%" onclick="currentSlide(1)" >
+      </div>
+      <div class="column"> 
+        <img class="demo cursor" src="../images/prop1pic2small.jpg" style="width:100%" onclick="currentSlide(2)" >
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../images/prop1pic3small.jpg" style="width:100%" onclick="currentSlide(3)" >
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../images/prop1pic4small.jpg" style="width:100%" onclick="currentSlide(4)" >
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../images/prop1pic5small.jpg" style="width:100%" onclick="currentSlide(5)">
+      </div> 
+      <div class="column">
+        <img class="demo cursor" src="../images/prop1pic6small.jpg" style="width:100%" onclick="currentSlide(6)" >
+      </div>
+    </div>
+  </div>
+
+
+
+  
+
+    <div class="tab"><!--Jquery tabs-->
+    <div id = "tabs-1">
+        <ul>
+           <li><a href = "#tabs-2">property Details</a></li>
+           <li><a href = "#tabs-3">Floor PLan</a></li>
+           <li><a href = "#tabs-4">Map On View</a></li>
+        </ul>
+
+        <div id = "tabs-2">
+          <div id="propertyDetails">
+              <i class="fas fa-bed" style="font-size:30px;" > bedrooms 3</i>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              <i class="fas fa-bath" style="font-size:30px;"> Bathrooms 2</i>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+              <i class="fas fa-couch"  style="font-size:30px;"> Living Rooms 1</i>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+     
+                <br><br>
+                <h1>Description</h1>
+                <br><br>
+               <div id="proprtyshrtDesc" class="currentProperty"></div>
+              </div>
+        </div>
+
+        <div id = "tabs-3">
+           <div planImg>
+              <img id="myImg" src="../images/prop1Plan.jpg" style="width:100%;max-width:300px">
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+              </div>
+           </div>   
+        </div>
+
+        <div id = "tabs-4">
+            <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.5647543761397!2d0.12366811568058292!3d51.44778667962536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ae93d227a917%3A0x276c26dc3dd6eb9b!2sBlendon+Rd%2C+Bexley%2C+UK!5e0!3m2!1sen!2slk!4v1546610331108" width="920" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+        </div>
+     </div>
+     </div>
+
+</div>
+
+
+<script>
+$(function() {//function to load property description
+  var output="";
+               output+=data.properties[0].description            
+      output+="";
+              document.getElementById("proprtyshrtDesc").innerHTML = output;
+              });
+
+
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {//function to load imagrs on click on the small image in slide show
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<script>
+             const navbarToggler = document.querySelector(".navbar-toggler");
+const navbarMenu = document.querySelector(".navbar ul");
+const navbarLinks = document.querySelectorAll(".navbar a");
+
+navbarToggler.addEventListener("click", navbarTogglerClick);
+
+function navbarTogglerClick() {
+  navbarToggler.classList.toggle("open-navbar-toggler");
+  navbarMenu.classList.toggle("open");
+}
+
+navbarLinks.forEach(elem => elem.addEventListener("click", navbarLinkClick));
+
+function navbarLinkClick() {
+  if(navbarMenu.classList.contains("open")) {
+    navbarToggler.click();
+  }
+}
+              </script>
+
+<script>
+  $(function() {
+     $( "#tabs-1" ).tabs();
+  });
+  $( "#tabs-2" ).tabs ({ 
+    active: 0 }
+  );
+  $( "#tabs-2" ).tabs (
+{ heightStyle: "auto" }
+);
+
+</script>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById('myModal');
+  
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var img = document.getElementById('myImg');
+  var modalImg = document.getElementById("img01");
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() { 
+    modal.style.display = "none";
+  }
+  </script>
+
+
+
+</body>
+
+
+
+</html>
