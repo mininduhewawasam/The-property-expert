@@ -1,0 +1,144 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+  <title>The Property Experts</title>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Real Estate</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="jQueryA.js"></script>
+<script src="jquery-ui.js"></script>
+
+<link href="jquery-ui.css" rel="stylesheet">
+
+<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/home.css" />
+
+    
+    <script src="propertyDetails.js"></script>
+</head>
+<body>
+        <nav class="navbar">
+                <a href="../MainPages/home.html" class="navbar-brand"><img id="Logo" src="../images/PropIcon.png"></a>
+                <ul>
+                  <li><a href="../MainPages/viewPoperties.html">View Properties</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">About Us</a></li>
+                </ul>
+                <button class="navbar-toggler">
+                  <span></span>
+                </button>
+              </nav>
+            
+              <header class="intro"></header>
+
+              <div class="searchProp"> 
+                       
+                  <figure></figure> <!--figures are used to display image slide show-->
+                  <figure></figure>
+                  <figure></figure>
+                  <figure></figure>
+                  <figure></figure>
+                    
+                      
+
+              <h1 align="center">Find Your Way Home</h1>            
+
+
+              <div class="searchElemnts"><!--div classes are used embed jquery ui-widgets-->
+              <div class="inline">
+                <div id= "minbed"><!--minimum bed rooms-->
+                  <h3>Min Bedrooms:</h3>
+                  <input id="spinner" value="1"></div>
+                  
+
+                 <div id="maxbed"><!--maximumbed rooms-->
+                   <h3>Max Bedrooms:</h3>
+                  <input id="spinner2" value="3"></div>
+                 
+               </div>
+               <br>
+               
+               <div id="propType"><!--proprty type--->
+                  <h3>Property type:</h3>
+                  <select name="property" id="property">
+                    <option value="Flat">Flat</option>
+                    <option value="House">House</option>
+                    <option value="Any" selected>Any</option>
+                  </select>
+               </div>
+               
+               <br>
+
+                 
+                <div class="Time">
+                  <h3>Time Posted</h3><!--tome of ad posted-->
+                  <select name="time" id="time">
+                   <option value="January", "Feburary", "March", "April"> January - April (2018)</option>
+                   <option value="May", "June", "July", "August">May - August (2018)</option>
+                   <option value="September", "October", "November", "December">September - December (2018)</option>
+                   <option value="Anytime" selected>Anytime</option>
+                  </select>
+                 </div> 
+                 
+                 <br>
+
+                 <div class="priceSelector"><!--price range selector-->
+               <p class="box">  
+                 <h3>Price Range</h3>
+                 </p>
+                 <div id="slider-range"></div><br>
+                 <input type="text" id="amount" readonly class="goldSliderText">
+
+                </div>
+                   
+                 <br>
+                 
+                <button id="Search">Search</button> 
+              </div>
+
+              <div id="favButtons">
+                  <button class="viewFavourites">View Favourites</button><!--button to view fav list-->
+                  <button class="clearFavourites">Clear All</button> <!--bttn to clear fav list-->   
+              </div>
+              
+              </div>
+              
+
+              <div id="Placeholder" class="searchResults"></div>
+
+              <div id="Placeholder2" class="favList"></div>
+
+
+              
+          
+
+              <script>
+             const navbarToggler = document.querySelector(".navbar-toggler");
+              const navbarMenu = document.querySelector(".navbar ul");
+              const navbarLinks = document.querySelectorAll(".navbar a");
+
+              navbarToggler.addEventListener("click", navbarTogglerClick);
+
+              function navbarTogglerClick() {
+              navbarToggler.classList.toggle("open-navbar-toggler");
+              navbarMenu.classList.toggle("open");
+}
+
+              navbarLinks.forEach(elem => elem.addEventListener("click", navbarLinkClick));
+
+function navbarLinkClick() {
+  if(navbarMenu.classList.contains("open")) {
+    navbarToggler.click();
+  }
+}
+              </script>
+
+             
+
+</body>
+</html>
