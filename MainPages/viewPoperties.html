@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Properties</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/allPrps.css" />
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="propertyDetails.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="jQueryA.js"></script>
+<script src="jquery-ui.js"></script>
+<link href="jquery-ui.css" rel="stylesheet">
+<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+        <nav class="navbar">
+                <a href="../MainPages/home.html" class="navbar-brand"><img id="Logo" src="../images/PropIcon.png"></a>
+                <ul>
+                  <li><a href="../MainPages/viewPoperties.html">View Properties</a></li>
+                  <li><a href="#css">Contact Us</a></li>
+                  <li><a href="#javascript">About Us</a></li>
+                </ul>
+                <button class="navbar-toggler">
+                  <span></span>
+                </button>
+              </nav>
+<br><br>
+        <div id="Placeholder" class="allProperties"></div><!--all the properties available will be load into this div class-->
+
+              <script>
+                   //functions for navigation bar
+                   const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarMenu = document.querySelector(".navbar ul");
+       const navbarLinks = document.querySelectorAll(".navbar a");
+       
+       navbarToggler.addEventListener("click", navbarTogglerClick);
+       
+       function navbarTogglerClick() {
+         navbarToggler.classList.toggle("open-navbar-toggler");
+         navbarMenu.classList.toggle("open");
+       }
+       
+       navbarLinks.forEach(elem => elem.addEventListener("click", navbarLinkClick));
+       
+       function navbarLinkClick() {
+         if(navbarMenu.classList.contains("open")) {
+           navbarToggler.click();
+         }
+       }
+
+
+
+       $(function() {
+	
+		var output="";
+		   for (var i in data.properties) {
+                 output+="<div class='propContainer'>"+"<h2><u>" + data.properties[i].bedrooms + " Bedrooms" + " " + data.properties[i].type +" "+"for sale"+ "</u></h2>"+"<button class='viewbtn'><a href='" + data.properties[i].url + "'>View Property</a></button><br>"  + "<div class='propDesription'>"+"<h3> Price"+" - " +"£" + data.properties[i].price+"</h3>" +"<h3> Type"+" - "+ data.properties[i].type+"</h3>"+"<h3> No Of Bed Rooms" +" - " + data.properties[i].bedrooms+"</h3>"+"<h3> Tenure"+" - "+ data.properties[i].tenure+"</h3>"+"<h3> Location"+" - "+ data.properties[i].location +"</h3>"+ "</div>" + 
+                 "<img class='propImge' src=" + data.properties[i].picture + ">"+
+                 "<hr><br><br>"+"</div>";
+                        }
+				output+="";
+                document.getElementById("Placeholder").innerHTML = output;
+                
+
+                $(".viewbtn").css({ 'padding':'5px',
+                                    'background-color': '#c0b283',
+                                    'border': 'none',
+                                    'color': 'white',
+                                    'padding': '10px 27px',
+                                    'text-align': 'center',
+                                    'text-decoration': 'none',
+                                    'display': 'inline-block',
+                                    'font-size': '16px',
+                                    'float':'right'});
+                $("a").css('text-decoration','none');
+               
+
+                $(".propDesription")(this).css({ 'width':'30%',
+                                                 'float':'left'    
+                                          });
+
+              $(".propImge").css({ 'margin-right':'4px',
+                                  'float':'right',
+                                  'position':'relative'                                       
+                                          });
+                                                          
+               $("a").css('text-decoration','none');
+              
+
+               $(".propContainer").css({  'border-style': 'solid',
+                                          'border-width': '1px'
+                                          });
+
+
+                $('.propImge').hover(function() {
+        $(this).addClass('transition');
+    
+    }, function() {
+        $(this).removeClass('transition');
+    });
+	});
+
+
+
+                     </script>
+</body>
+</html>
